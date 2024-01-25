@@ -39,7 +39,7 @@ public class HelloController {
     DescargarArchivo descargarArchivo=new DescargarArchivo();
     @FXML
     void enviar() {
-        subirArchivp.subirArchivo();
+        subirArchivp.subirArchivo(descargarArchivo.extensionArchivo(urlTextField.getText()));
     }
     @FXML
     void descargar() {

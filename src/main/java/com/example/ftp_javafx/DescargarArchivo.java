@@ -3,6 +3,7 @@ package com.example.ftp_javafx;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.concurrent.ExecutionException;
+
 import org.asynchttpclient.Dsl;
 import org.asynchttpclient.AsyncCompletionHandler;
 import org.asynchttpclient.AsyncHandler;
@@ -13,14 +14,14 @@ import org.asynchttpclient.Response;
 
 public class DescargarArchivo {
 
-    public void descargarArchivo(String url,String nombre) {
+    public void descargarArchivo(String url, String nombre) {
         try {
             //archivo a descargar
             final String ORIGEN = url;
-            String extension=url.substring(url.lastIndexOf("."));
+            String extension = url.substring(url.lastIndexOf("."));
             System.out.println(extension);
             //archivo destino
-            final String DESTINO = nombre+extension;
+            final String DESTINO = nombre + extension;
 
             FileOutputStream stream = new FileOutputStream(DESTINO);
 
@@ -46,10 +47,15 @@ public class DescargarArchivo {
 
             FileOutputStream fos = client.prepareGet(ORIGEN).execute(asyncHandler).get();
             fos.close();
+
         } catch (InterruptedException | ExecutionException | IOException ex) {
             System.err.println(ex.getMessage());
         }
 
+    }
+
+    public String extensionArchivo(String url) {
+        return url.substring(url.lastIndexOf("."));
     }
 
 }

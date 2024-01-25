@@ -11,7 +11,7 @@ import org.apache.commons.net.ftp.FTP;
 import org.apache.commons.net.ftp.FTPClient;
 
 public class SubirArchivp {
-    public void subirArchivo() {
+    public void subirArchivo(String archivo) {
         String server = "172.18.185.27";
         int port = 21;
         String user = "alexei";
@@ -23,7 +23,7 @@ public class SubirArchivp {
             //ftpClient.enterLocalPassiveMode();
             ftpClient.setFileType(FTP.BINARY_FILE_TYPE);
             // APPROACH #1: uploads first file using an InputStream
-            File firstLocalFile = new File("archivo_descargado.jpg");
+            File firstLocalFile = new File(archivo);
             long inicio = System.currentTimeMillis();
             long tamanyo = firstLocalFile.length();
 
