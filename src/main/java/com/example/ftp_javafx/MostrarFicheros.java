@@ -31,7 +31,7 @@ public class MostrarFicheros {
                 return;
             }
             // Lists files and directories
-            FTPFile[] files1 = ftpClient.listFiles();
+            FTPFile[] files1 = ftpClient.listFiles("/");
             printFileDetails(files1);
             // uses simpler methods
             String[] files2 = ftpClient.listNames();
@@ -66,7 +66,7 @@ public class MostrarFicheros {
     }
 
     private static void printNames(String files[]) {
-        if (files != null & files.length > 0) {
+        if ((files != null && files.length > 0)) {
             for (String aFile : files) {
                 System.out.println(aFile);
             }
@@ -75,7 +75,7 @@ public class MostrarFicheros {
 
     private static void showServerReply(FTPClient ftpClient) {
         String[] replies = ftpClient.getReplyStrings();
-        if (replies != null & replies.length > 0) {
+        if ((replies != null && replies.length > 0)) {
             for (String aReply : replies) {
                 System.out.println("SERVER: " + aReply);
             }
