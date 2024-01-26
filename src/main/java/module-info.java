@@ -3,6 +3,7 @@ module com.example.ftp_javafx {
     requires javafx.fxml;
     requires org.apache.commons.net;
     requires async.http.client;
+    requires org.apache.commons.io;
 
 
     opens com.example.ftp_javafx to javafx.fxml;

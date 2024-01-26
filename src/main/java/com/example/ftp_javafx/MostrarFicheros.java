@@ -10,7 +10,7 @@ import org.apache.commons.net.ftp.FTPReply;
 
 
 public class MostrarFicheros {
-    public static void main(String[] args) {
+    public void mostrarFichero() {
         String server = "172.18.185.27";
         int port = 21;
         String user = "alexei";
@@ -31,7 +31,7 @@ public class MostrarFicheros {
                 return;
             }
             // Lists files and directories
-            FTPFile[] files1 = ftpClient.listFiles("/public_ftp");
+            FTPFile[] files1 = ftpClient.listFiles();
             printFileDetails(files1);
             // uses simpler methods
             String[] files2 = ftpClient.listNames();

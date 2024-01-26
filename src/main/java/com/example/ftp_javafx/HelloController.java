@@ -6,8 +6,11 @@ import javafx.scene.control.Button;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 
+import java.io.IOException;
+import java.net.URL;
+
 public class HelloController {
-    static int i=0;
+    static int i=1;
 
     @FXML
     private Button cargarButton;
@@ -38,14 +41,25 @@ public class HelloController {
     SubirArchivp subirArchivp=new SubirArchivp();
     DescargarArchivo descargarArchivo=new DescargarArchivo();
     Main main=new Main();
+    MostrarFicheros mostrarFicheros=new MostrarFicheros();
+    String archivo;
     @FXML
     void enviar() {
-        subirArchivp.subirArchivo(descargarArchivo.extensionArchivo("archivo"+i,urlTextField.getText()));
+        subirArchivp.subirArchivo(archivo);
         i++;
     }
     @FXML
+    void mostrar() {
+        mostrarFicheros.mostrarFichero();
+    }
+    @FXML
     void descargar() {
-        descargarArchivo.descargarArchivo(urlTextField.getText(),"archivo"+(i));
+        try {
+            archivo="archivo"+i+urlTextField.getText().substring(urlTextField.getText().lastIndexOf("."));
+            descargarArchivo.descargarArchivo(new URL(urlTextField.getText()),archivo);
+        }catch (IOException e){
+            e.printStackTrace();
+        }
     }
 
     @FXML
