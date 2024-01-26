@@ -31,7 +31,7 @@ public class MostrarFicheros {
                 return;
             }
             // Lists files and directories
-            FTPFile[] files1 = ftpClient.listFiles("/");
+            FTPFile[] files1 = ftpClient.listFiles();
             printFileDetails(files1);
             // uses simpler methods
             String[] files2 = ftpClient.listNames();
