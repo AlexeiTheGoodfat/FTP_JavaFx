@@ -28,10 +28,9 @@ public class SubirArchivp {
             long tamanyo = firstLocalFile.length();
 
 
-            String firstRemoteFile = "Aules.png";
             InputStream inputStream = new FileInputStream(firstLocalFile);
             System.out.println("Start uploading first file");
-            boolean done = ftpClient.storeFile(firstRemoteFile, inputStream);
+            boolean done = ftpClient.storeFile(archivo, inputStream);
             inputStream.close();
             long tiempofinal = System.currentTimeMillis();
             System.out.println("Tiempo:" + (tiempofinal - inicio));

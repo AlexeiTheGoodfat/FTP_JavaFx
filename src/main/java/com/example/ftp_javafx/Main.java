@@ -5,7 +5,7 @@ import java.io.IOException;
 import org.apache.commons.net.ftp.FTPClient;
 
 public class Main {
-    public static void main(String[] args) {
+    public void conectarse() {
         FTPClient client = new FTPClient();
         String sFTP = "172.18.185.27";
         String sUser = "alexei";

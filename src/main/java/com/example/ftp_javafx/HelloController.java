@@ -37,17 +37,20 @@ public class HelloController {
     private TextField usuarioTextField;
     SubirArchivp subirArchivp=new SubirArchivp();
     DescargarArchivo descargarArchivo=new DescargarArchivo();
+    Main main=new Main();
     @FXML
     void enviar() {
-        subirArchivp.subirArchivo(descargarArchivo.extensionArchivo(urlTextField.getText()));
+        subirArchivp.subirArchivo(descargarArchivo.extensionArchivo("archivo"+i,urlTextField.getText()));
+        i++;
     }
     @FXML
     void descargar() {
-        descargarArchivo.descargarArchivo(urlTextField.getText(),"archivo"+(i++));
+        descargarArchivo.descargarArchivo(urlTextField.getText(),"archivo"+(i));
     }
 
     @FXML
     void initialize() {
+        main.conectarse();
         assert cargarButton != null : "fx:id=\"cargarButton\" was not injected: check your FXML file 'hello-view.fxml'.";
         assert claveTextField != null : "fx:id=\"claveTextField\" was not injected: check your FXML file 'hello-view.fxml'.";
         assert enviarButton != null : "fx:id=\"enviarButton\" was not injected: check your FXML file 'hello-view.fxml'.";

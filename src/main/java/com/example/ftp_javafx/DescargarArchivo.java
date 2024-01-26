@@ -54,8 +54,8 @@ public class DescargarArchivo {
 
     }
 
-    public String extensionArchivo(String url) {
-        return url.substring(url.lastIndexOf("."));
+    public String extensionArchivo(String nombre,String url) {
+        return nombre+url.substring(url.lastIndexOf("."));
     }
 
 }
