@@ -21,6 +21,7 @@
       <TextArea fx:id="textArea" editable="false" layoutX="260.0" layoutY="31.0" prefHeight="348.0" prefWidth="314.0" />
       <Button fx:id="cargarButton" layoutX="24.0" layoutY="354.0" mnemonicParsing="false" onAction="#descargar" prefHeight="25.0" prefWidth="91.0" text="Cargar" />
       <Button fx:id="enviarButton" layoutX="144.0" layoutY="354.0" mnemonicParsing="false" onAction="#enviar" prefHeight="25.0" prefWidth="91.0" text="Enviar" />
-      <Button fx:id="mostrarButton" layoutX="24.0" layoutY="263.0" mnemonicParsing="false" onAction="#mostrar" prefHeight="25.0" prefWidth="212.0" text="Mostrar" />
+      <Button fx:id="mostrarButton" layoutX="24.0" layoutY="304.0" mnemonicParsing="false" onAction="#mostrar" prefHeight="25.0" prefWidth="212.0" text="Mostrar" />
+      <Button fx:id="loginButton" layoutX="24.0" layoutY="254.0" mnemonicParsing="false" onAction="#conectar" prefHeight="25.0" prefWidth="212.0" text="Login" />
    </children>
 </AnchorPane>

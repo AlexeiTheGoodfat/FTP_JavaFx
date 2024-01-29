@@ -10,14 +10,10 @@ import org.apache.commons.net.ftp.FTPReply;
 
 
 public class MostrarFicheros {
-    public void mostrarFichero() {
-        String server = "172.18.185.27";
-        int port = 21;
-        String user = "alexei";
-        String pass = "psp123";
+    public void mostrarFichero(String server,String user, String pass,int puerto) {
         FTPClient ftpClient = new FTPClient();
         try {
-            ftpClient.connect(server, port);
+            ftpClient.connect(server);
             showServerReply(ftpClient);
             int replyCode = ftpClient.getReplyCode();
             if (!FTPReply.isPositiveCompletion(replyCode)) {

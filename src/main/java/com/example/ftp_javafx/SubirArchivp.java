@@ -12,13 +12,13 @@ import org.apache.commons.net.ftp.FTPClient;
 
 public class SubirArchivp {
     public void subirArchivo(String archivo) {
-        String server = "172.18.185.27";
-        int port = 21;
+        String server = "localhost";
+        int port = 14148;
         String user = "alexei";
         String pass = "psp123";
         FTPClient ftpClient = new FTPClient();
         try {
-            ftpClient.connect(server, port);
+            ftpClient.connect(server);
             ftpClient.login(user, pass);
             //ftpClient.enterLocalPassiveMode();
             ftpClient.setFileType(FTP.BINARY_FILE_TYPE);
@@ -38,6 +38,26 @@ public class SubirArchivp {
                 System.out.println("The first file is uploaded successfully. " + tamanyo + " bytes en " +
                         (tiempofinal - inicio) / 1000 + " b/s");
             }
+            /*File secondLocalFile = new File(archivo);
+            String secondRemoteFile = archivo;
+            InputStream inputStream = new FileInputStream(secondLocalFile);
+            System.out.println("Start uploading second file");
+            OutputStream outputStream = ftpClient.storeFileStream(secondRemoteFile);
+            byte[] bytesIn = new byte[4096];
+            int read = 0;
+            while ((read = inputStream.read(bytesIn)) == -1) {
+                outputStream.write(bytesIn, 0, read);
+            }
+
+            inputStream.close();
+
+            outputStream.close();
+
+            boolean completed = ftpClient.completePendingCommand();
+
+            if (completed) {
+                System.out.println("The second file is uploaded successfully.");
+            }*/
         } catch (IOException ex) {
             System.out.println("Error: " + ex.getMessage());
             ex.printStackTrace();

@@ -28,6 +28,9 @@ public class HelloController {
     private TextField puertoTextField;
 
     @FXML
+    private Button loginButton;
+
+    @FXML
     private TextField serverTextField;
 
     @FXML
@@ -50,7 +53,7 @@ public class HelloController {
     }
     @FXML
     void mostrar() {
-        mostrarFicheros.mostrarFichero();
+        mostrarFicheros.mostrarFichero(serverTextField.getText(),usuarioTextField.getText(),claveTextField.getText(),Integer.parseInt(puertoTextField.getText()));
     }
     @FXML
     void descargar() {
@@ -61,10 +64,13 @@ public class HelloController {
             e.printStackTrace();
         }
     }
+    @FXML
+    void conectar() {
+        main.conectarse(serverTextField.getText(),usuarioTextField.getText(),claveTextField.getText(),Integer.parseInt(puertoTextField.getText()));
+    }
 
     @FXML
     void initialize() {
-        main.conectarse();
         assert cargarButton != null : "fx:id=\"cargarButton\" was not injected: check your FXML file 'hello-view.fxml'.";
         assert claveTextField != null : "fx:id=\"claveTextField\" was not injected: check your FXML file 'hello-view.fxml'.";
         assert enviarButton != null : "fx:id=\"enviarButton\" was not injected: check your FXML file 'hello-view.fxml'.";

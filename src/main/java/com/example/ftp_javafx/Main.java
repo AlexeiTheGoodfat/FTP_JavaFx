@@ -5,11 +5,8 @@ import java.io.IOException;
 import org.apache.commons.net.ftp.FTPClient;
 
 public class Main {
-    public void conectarse() {
+    public void conectarse(String sFTP,String sUser, String sPassword,int puerto) {
         FTPClient client = new FTPClient();
-        String sFTP = "172.18.185.27";
-        String sUser = "alexei";
-        String sPassword = "psp123";
         try {
             client.connect(sFTP);
             boolean login = client.login(sUser, sPassword);
