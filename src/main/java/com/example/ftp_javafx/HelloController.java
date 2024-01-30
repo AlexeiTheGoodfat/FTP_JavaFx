@@ -48,25 +48,45 @@ public class HelloController {
     String archivo;
     @FXML
     void enviar() {
-        subirArchivp.subirArchivo(archivo);
-        i++;
+        try {
+            subirArchivp.subirArchivo(archivo);
+            textArea.appendText("Archivo subido: "+archivo+"\n");
+            i++;
+        }catch (NullPointerException e){
+            textArea.appendText("No se ha descargado el archivo aun"+"\n");
+        }
+
     }
     @FXML
     void mostrar() {
-        mostrarFicheros.mostrarFichero(serverTextField.getText(),usuarioTextField.getText(),claveTextField.getText(),Integer.parseInt(puertoTextField.getText()));
+        try {
+            mostrarFicheros.mostrarFichero(serverTextField.getText(),usuarioTextField.getText(),claveTextField.getText(),Integer.parseInt(puertoTextField.getText()));
+        }catch (NullPointerException e){
+            textArea.appendText("Completa todos los campos"+"\n");
+        }catch (NumberFormatException e){
+            textArea.appendText("Completa el campo puerto correctamente"+"\n");
+        }
     }
     @FXML
     void descargar() {
         try {
             archivo="archivo"+i+urlTextField.getText().substring(urlTextField.getText().lastIndexOf("."));
             descargarArchivo.descargarArchivo(new URL(urlTextField.getText()),archivo);
+            textArea.appendText("Archivo descargado: "+urlTextField.getText()+"\n");
         }catch (IOException e){
-            e.printStackTrace();
+            textArea.appendText("Completa todos los campos"+"\n");
         }
     }
     @FXML
     void conectar() {
-        main.conectarse(serverTextField.getText(),usuarioTextField.getText(),claveTextField.getText(),Integer.parseInt(puertoTextField.getText()));
+        try {
+            main.conectarse(serverTextField.getText(),usuarioTextField.getText(),claveTextField.getText(),Integer.parseInt(puertoTextField.getText()));
+        }catch (NullPointerException e){
+            textArea.appendText("Completa todos los campos"+"\n");
+        }catch (NumberFormatException e){
+            textArea.appendText("Completa el campo puerto correctamente"+"\n");
+        }
+
     }
 
     @FXML

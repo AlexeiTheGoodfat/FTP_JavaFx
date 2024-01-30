@@ -22,7 +22,6 @@ public class DescargarArchivo {
 
     public void descargarArchivo(URL url, String nombre) throws IOException {
         FileUtils.copyURLToFile(url, new File(nombre));
-        System.out.println("Archivo descargado");
     }
 
 

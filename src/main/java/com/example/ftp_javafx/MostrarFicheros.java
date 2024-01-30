@@ -28,9 +28,9 @@ public class MostrarFicheros {
             }
             // Lists files and directories
             FTPFile[] files1 = ftpClient.listFiles();
-            printFileDetails(files1);
             // uses simpler methods
             String[] files2 = ftpClient.listNames();
+            printFileDetails(files1);
             printNames(files2);
         } catch (IOException ex) {
             System.out.println("Oops! Something wrong happened");
