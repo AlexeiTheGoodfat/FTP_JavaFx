@@ -6,15 +6,15 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.ftp_javafx.HelloController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="450.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.ftp_javafx.HelloController">
    <children>
       <TextField fx:id="urlTextField" layoutX="69.0" layoutY="26.0" />
       <Text layoutX="19.0" layoutY="43.0" strokeType="OUTSIDE" strokeWidth="0.0" text="URL :" />
       <Text layoutX="20.0" layoutY="88.0" strokeType="OUTSIDE" strokeWidth="0.0" text="FTP :" />
-      <TextField fx:id="serverTextField" layoutX="69.0" layoutY="71.0" />
+      <TextField fx:id="serverTextField" layoutX="69.0" layoutY="71.0" text="localhost" />
       <Text layoutX="10.0" layoutY="127.0" strokeType="OUTSIDE" strokeWidth="0.0" text="PUERTO :" />
-      <TextField fx:id="puertoTextField" layoutX="69.0" layoutY="110.0" />
-      <TextField fx:id="usuarioTextField" layoutX="69.0" layoutY="150.0" />
+      <TextField fx:id="puertoTextField" layoutX="69.0" layoutY="110.0" text="21" />
+      <TextField fx:id="usuarioTextField" layoutX="69.0" layoutY="150.0" text="alexei" />
       <TextField fx:id="claveTextField" layoutX="69.0" layoutY="200.0" />
       <Text layoutX="7.0" layoutY="167.0" strokeType="OUTSIDE" strokeWidth="0.0" text="USUARIO :" />
       <Text layoutX="14.0" layoutY="217.0" strokeType="OUTSIDE" strokeWidth="0.0" text="CLAVE :" />
@@ -22,6 +22,7 @@
       <Button fx:id="cargarButton" layoutX="24.0" layoutY="354.0" mnemonicParsing="false" onAction="#descargar" prefHeight="25.0" prefWidth="91.0" text="Cargar" />
       <Button fx:id="enviarButton" layoutX="144.0" layoutY="354.0" mnemonicParsing="false" onAction="#enviar" prefHeight="25.0" prefWidth="91.0" text="Enviar" />
       <Button fx:id="mostrarButton" layoutX="24.0" layoutY="304.0" mnemonicParsing="false" onAction="#mostrar" prefHeight="25.0" prefWidth="212.0" text="Mostrar" />
-      <Button fx:id="loginButton" layoutX="24.0" layoutY="254.0" mnemonicParsing="false" onAction="#conectar" prefHeight="25.0" prefWidth="212.0" text="Login" />
+      <Button fx:id="enviarCorreoButton" layoutX="24.0" layoutY="254.0" mnemonicParsing="false" onAction="#enviarCorreo" prefHeight="25.0" prefWidth="212.0" text="Enviar Correo" />
+      <Button fx:id="loginButton" layoutX="24.0" layoutY="398.0" mnemonicParsing="false" onAction="#mostrarDirectorio" prefHeight="25.0" prefWidth="212.0" text="Mostrar directorio" />
    </children>
 </AnchorPane>
